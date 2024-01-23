@@ -19,6 +19,7 @@ require("lazy").setup({
   require "plugins.bufferline", -- 显示缓冲区文件
   require "plugins.comment", -- 快速注释
   require "plugins.gitsigns", -- git 标记
+  require "plugins.indent-blankline", -- 缩进对齐线
   require "plugins.lualine", -- 状态栏
   require "plugins.nvim-tree", -- 文档树
   require "plugins.telescope", -- 文件搜素
