@@ -1,5 +1,10 @@
 local opt = vim.opt
 
+-- 窗口显示标题
+opt.title = true
+opt.titlelen = 0
+opt.titlestring = 'nvim %{expand("%:p")}'
+
 -- 行号
 opt.relativenumber = true
 opt.number = true
