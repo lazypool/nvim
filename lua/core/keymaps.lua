@@ -32,8 +32,10 @@ keymap.set("n", "K", "I") -- 行首插入
 -- 高级光标移动
 keymap.set("n", "U", "5k") -- 上移五行
 keymap.set("n", "E", "5j") -- 下移五行
-keymap.set("n", "N", "0") -- 移至行首
-keymap.set("n", "I", "$") -- 移至行尾
+keymap.set("n", "N", "8h") -- 左移八列
+keymap.set("n", "I", "8l") -- 右移八列
+keymap.set("n", "<A-n>", "0") -- 移至行首
+keymap.set("n", "<A-i>", "$") -- 移至行尾
 
 -- 中文字符计数
 keymap.set("n", "gn", ":%s/[\\u4E00-\\u9FCC]//gn<CR>")
