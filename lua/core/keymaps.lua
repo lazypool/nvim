@@ -9,6 +9,10 @@ keymap.set("", "e", "j") -- 下移
 keymap.set("", "n", "h") -- 左移
 keymap.set("", "i", "l") -- 右移
 
+-- 插入
+keymap.set("", "k", "i") -- 正常插入
+keymap.set("", "K", "I") -- 行首插入
+
 -- 删键
 keymap.set("", "s", ":<CR>") -- s 键无效
 keymap.set("", "r", ":<CR>") -- r 键无效
@@ -24,10 +28,6 @@ keymap.set("v", "K", "I") -- 在全部选中行首插入
 -- 窗口
 keymap.set("n", "<leader>sv", "<C-w>v") -- 垂直分窗
 keymap.set("n", "<leader>sh", "<C-w>s") -- 水平分窗
-
--- 插入
-keymap.set("n", "k", "i") -- 正常插入
-keymap.set("n", "K", "I") -- 行首插入
 
 -- 高级光标移动
 keymap.set("n", "U", "5k") -- 上移五行
