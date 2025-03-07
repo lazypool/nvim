@@ -19,8 +19,8 @@ keymap.set("", "r", ":<CR>") -- r 键无效
 
 -- ---------- 视觉模式 ---------- --
 -- 单行或多行移动
-keymap.set("v", "U", ":m '<-2<CR>gv=gv") -- 上移
-keymap.set("v", "E", ":m '>+1<CR>gv=gv") -- 下移
+keymap.set("v", "<A-u>", ":m '<-2<CR>gv=gv") -- 上移
+keymap.set("v", "<A-e>", ":m '>+1<CR>gv=gv") -- 下移
 
 keymap.set("v", "K", "I") -- 在全部选中行首插入
 
