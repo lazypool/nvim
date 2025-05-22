@@ -26,7 +26,7 @@ return {
 				"gopls",
 				"html",
 				"jdtls",
-				"tsserver",
+				"ts_ls",
 				"texlab",
 				"lua_ls",
 				"marksman",
