@@ -38,7 +38,7 @@ keymap.set("n", "<leader>sv", "<C-w>v") -- 垂直分窗
 keymap.set("n", "<leader>sh", "<C-w>s") -- 水平分窗
 
 -- 中文字符计数
-keymap.set("n", "gn", ":%s/[\\u4E00-\\u9FCC]//gn<CR>")
+keymap.set("n", "zn", ":%s/[\\u4E00-\\u9FCC]//gn<CR>")
 
 -- 其他
 keymap.set("n", "l", "u") -- 撤销

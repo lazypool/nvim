@@ -3,7 +3,7 @@ return {
 	dependencies = {
 		"neovim/nvim-lspconfig",
 		"williamboman/mason-lspconfig.nvim",
-		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		"WhoIsSethDaniel/mason-tool-installer.nvim"
 	},
 	config = function()
 		-- mason 配置
@@ -12,9 +12,9 @@ return {
 				icons = {
 					package_installed = "✓",
 					package_pending = "➜",
-					package_uninstalled = "✗",
-				},
-			},
+					package_uninstalled = "✗"
+				}
+			}
 		})
 
 		-- mason-lspconfig 配置
@@ -32,8 +32,8 @@ return {
 				"lua_ls",
 				"marksman",
 				"pyright",
-				"vimls",
-			},
+				"vimls"
+			}
 		})
 
 		-- 第三方工具
@@ -44,8 +44,8 @@ return {
 				"isort",
 				"black",
 				"pylint",
-				"eslint_d",
-			},
+				"eslint_d"
+			}
 		})
-	end,
+	end
 }

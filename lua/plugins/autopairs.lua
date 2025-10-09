@@ -6,7 +6,7 @@ return {
 			check_ts = true,
 			ts_config = {
 				lua = { "string", "source" },
-				javascript = { "string", "template_string" },
+				javascript = { "string", "template_string" }
 			},
 			fast_wrap = {
 				map = "<M-e>",
@@ -16,8 +16,8 @@ return {
 				keys = "qwfpgjluyzxcvbkmarstdheio",
 				check_comma = true,
 				highlight = "Search",
-				highlight_grey = "Comment",
-			},
+				highlight_grey = "Comment"
+			}
 		})
-	end,
+	end
 }

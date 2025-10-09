@@ -78,7 +78,7 @@ return {
 			-- 应用按键映射
 			on_attach = keymaps,
 			-- 修改图标和文档名之间的填充
-			renderer = { icons = { padding = " " } },
+			renderer = { icons = { padding = " " } }
 		})
-	end,
+	end
 }

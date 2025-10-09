@@ -14,7 +14,7 @@ return {
 		-- 第三方片段引擎
 		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
-		"rafamadriz/friendly-snippets",
+		"rafamadriz/friendly-snippets"
 	},
 	config = function()
 		local cmp_ok, cmp = pcall(require, "cmp")
@@ -30,7 +30,7 @@ return {
 			snippet = {
 				expand = function(args)
 					require("luasnip").lsp_expand(args.body)
-				end,
+				end
 			},
 
 			-- 按键映射
@@ -66,17 +66,17 @@ return {
 					else
 						fallback()
 					end
-				end, { "i", "s" }),
+				end, { "i", "s" })
 			}),
 
 			-- 指定资源
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
-				{ name = "path" },
+				{ name = "path" }
 			}, {
-				{ name = "buffer" },
-			}),
+				{ name = "buffer" }
+			})
 		})
-	end,
+	end
 }
