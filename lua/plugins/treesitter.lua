@@ -2,7 +2,7 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
 	config = function ()
-	  require("nvim-treesitter.configs").setup({
+		require("nvim-treesitter.configs").setup({
 			ensure_installed = {
 				"c",
 				"lua",
@@ -13,18 +13,25 @@ return {
 				"heex",
 				"javascript",
 				"html",
-				"markdown",
+				"markdown"
 			},
-      sync_install = false,
-      highlight = {
+			sync_install = false,
+			auto_install = true,
+			highlight = {
 				enable = true,
 				disable = {
-					"latex",
+					"latex"
 				}
 			},
-      indent = {
-				enable = true
-			},
-    })
-  end
+			incremental_selection = {
+				enable = true,
+				keymaps = {
+					init_selection = "gnn",
+					node_incremental = "grn",
+					scope_incremental = "grc",
+					node_decremental = "grm"
+				}
+			}
+		})
+	end
  }
