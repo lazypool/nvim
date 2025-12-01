@@ -1,0 +1,16 @@
+{
+  "diagnostics": {
+    "globals": ["vim"]
+  },
+  "workspace": {
+    "checkThirdParty": false,
+    "library": [
+      "/usr/share/nvim/runtime/lua",
+      "/usr/share/nvim/runtime/lua/vim",
+      "/usr/share/nvim/runtime/lua/vim/lsp"
+    ]
+  },
+  "telemetry": {
+    "enable": false
+  }
+}
