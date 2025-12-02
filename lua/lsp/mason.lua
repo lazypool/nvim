@@ -6,7 +6,6 @@ return {
 		"WhoIsSethDaniel/mason-tool-installer.nvim"
 	},
 	config = function()
-		-- mason 配置
 		require("mason").setup({
 			ui = {
 				icons = {
@@ -17,34 +16,34 @@ return {
 			}
 		})
 
-		-- mason-lspconfig 配置
+		-- 管理 LSP
 		require("mason-lspconfig").setup({
 			-- 选择需要启动的 lsp 服务器的语言
 			ensure_installed = {
-				"bashls",
-				"clangd",
-				"cssls",
-				"gopls",
+				"lua_ls",          -- Lua
+				"pyright",         -- Python
+				"gopls",           -- Go
+				"rust_analyzer",   -- Rust
+				"tsserver",        -- Typescript/Javascript
 				"html",
-				"jdtls",
-				"ts_ls",
-				"texlab",
-				"lua_ls",
-				"marksman",
-				"pyright",
-				"vimls"
+				"cssls",
+				"jsonls",
+				"bashls",
+				"clangd"           -- C/C++
 			}
 		})
 
-		-- 第三方工具
+		-- 管理其他开发工具
 		require("mason-tool-installer").setup({
 			ensure_installed = {
-				"prettier",
-				"stylua",
-				"isort",
-				"black",
-				"pylint",
-				"eslint_d"
+				-- 代码格式化
+				"prettier",        -- JS/TS/HTML/CSS 等
+				"stylua",          -- Lua
+				"black",           -- Python
+				"isort",           -- Python import 排序
+				-- 代码检查
+				"eslint_d",        -- Javascript/Typescript
+				"pylint",          -- Python
 			}
 		})
 	end
