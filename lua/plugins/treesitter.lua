@@ -4,16 +4,22 @@ return {
 	config = function ()
 		require("nvim-treesitter.configs").setup({
 			ensure_installed = {
+				"bash",
 				"c",
 				"lua",
 				"vim",
 				"vimdoc",
 				"query",
-				"elixir",
-				"heex",
+				"python",
+				"go",
+				"rust",
 				"javascript",
+				"typescript",
 				"html",
-				"markdown"
+				"css",
+				"json",
+				"markdown",
+				"markdown_inline",
 			},
 			sync_install = false,
 			auto_install = true,
