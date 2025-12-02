@@ -1,49 +1,41 @@
--- 检查
-local check_backspace = function()
-	local col = vim.fn.col(".") - 1
-	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
-end
-
 return {
 	"hrsh7th/nvim-cmp",
-	dependencies = {
-		-- 补全插件
+	event="InsertEnter",
+	dependencies={
 		"hrsh7th/cmp-nvim-lsp",
-		-- 路径补全插件
 		"hrsh7th/cmp-path",
-		-- 第三方片段引擎
+		"hrsh7th/cmp-buffer",
+		"hrsh7th/cmp-cmdline",
 		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
-		"rafamadriz/friendly-snippets"
+		"rafamadriz/friendly-snippets",
 	},
 	config = function()
-		local cmp_ok, cmp = pcall(require, "cmp")
-		local luasnip_ok, luasnip = pcall(require, "luasnip")
-		if not cmp_ok or not luasnip_ok then
-			return
-		end
-
+		local cmp = require("cmp")
+		local luasnip = require("luasnip")
+		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 		require("luasnip.loaders.from_vscode").lazy_load()
 
+		local check_backspace = function()
+			local col = vim.fn.col(".") - 1
+			return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
+		end
+
 		cmp.setup({
-			-- 片段引擎
 			snippet = {
 				expand = function(args)
-					require("luasnip").lsp_expand(args.body)
+					luasnip.lsp_expand(args.body)
 				end
 			},
 
-			-- 按键映射
 			mapping = cmp.mapping.preset.insert({
-				-- Ctrl+B 向上滚动补全列表
 				["<C-b>"] = cmp.mapping.scroll_docs(-4),
-				-- Ctrl+F 向下滚动补全列表
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
-				-- Ctrl+E 取消补全，ESC 也可以退出
 				["<C-e>"] = cmp.mapping.abort(),
-				-- 回车 选定补全选项
-				["<CR>"] = cmp.mapping.confirm({ select = true }),
-				-- Tab 在列表中选择补全选项或者跳到下一个可输入位置
+				["<CR>"] = cmp.mapping.confirm({
+					select = true,
+					behavior = cmp.ConfirmBehavior.Replace,
+				}),
 				["<Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_next_item()
@@ -57,7 +49,6 @@ return {
 						fallback()
 					end
 				end, { "i", "s" }),
-				-- Shift+Tab 返回上一个输入位置
 				["<S-Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_prev_item()
@@ -66,17 +57,58 @@ return {
 					else
 						fallback()
 					end
-				end, { "i", "s" })
+				end)
 			}),
 
-			-- 指定资源
 			sources = cmp.config.sources({
-				{ name = "nvim_lsp" },
-				{ name = "luasnip" },
-				{ name = "path" }
+				{ name = "nvim_lsp", priority = 1000 },
+				{ name = "luasnip", priority = 750 },
+				{ name = "path", priority = 500 }
 			}, {
-				{ name = "buffer" }
+				{ name = "buffer", priority = 250 }
+			}),
+
+			formatting = {
+				format = function(entry, vimitem)
+					vimitem.menu = ({
+						nvim_lsp = "[LSP]",
+						luasnip = "[Snip]",
+						path = "[Path]",
+						buffer = "[Buffer]",
+						cmdline = "[Cmd]"
+					})[entry.source.name]
+					return vimitem
+				end
+			},
+
+			window = {
+        completion = cmp.config.window.bordered({
+					border = "single"
+				}),
+        documentation = cmp.config.window.bordered({
+					border = "single"
+				}),
+				experimental = {
+					ghost_text = true
+				},
+				capabilities = capabilities
+			}
+		})
+
+		cmp.setup.cmdline(":", {
+			mapping = cmp.mapping.preset.cmdline(),
+			sources = cmp.config.sources({
+				{ name = "path" },
+			}, {
+				{ name = "cmdline"},
 			})
+		})
+
+		cmp.setup.cmdline("/", {
+			mapping = cmp.mapping.preset.cmdline(),
+			sources = {
+				{ name = "buffer" },
+			}
 		})
 	end
 }
