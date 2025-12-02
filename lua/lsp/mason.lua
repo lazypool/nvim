@@ -24,7 +24,7 @@ return {
 				"pyright",         -- Python
 				"gopls",           -- Go
 				"rust_analyzer",   -- Rust
-				"tsserver",        -- Typescript/Javascript
+				"ts_ls",           -- Typescript/Javascript
 				"html",
 				"cssls",
 				"jsonls",
