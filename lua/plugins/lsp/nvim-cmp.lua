@@ -9,11 +9,13 @@ return {
 		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
 		"rafamadriz/friendly-snippets",
+		"windwp/nvim-autopairs"
 	},
 	config = function()
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
+		local cmpautopairs = require("nvim-autopairs.completion.cmp")
 		require("luasnip.loaders.from_vscode").lazy_load()
 
 		local check_backspace = function()
@@ -110,5 +112,10 @@ return {
 				{ name = "buffer" },
 			}
 		})
+
+		cmp.event:on(
+			'confirm_done',
+			cmpautopairs.on_confirm_done()
+		)
 	end
 }
