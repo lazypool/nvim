@@ -46,3 +46,10 @@ keymap.set("n", "j", "<C-r>") -- 恢复
 keymap.set("n", "S", ":w<CR>") -- 保存
 keymap.set("n", "Q", ":q<CR>") -- 退出
 keymap.set("n", "<leader><CR>", ":nohl<CR>") -- 取消高亮
+
+-- Navigator 按键设置
+keymap.set("n", "<leader>u", ":<C-u>TmuxNavigateUp<CR>") -- 移至上窗
+keymap.set("n", "<leader>e", ":<C-u>TmuxNavigateDown<CR>") -- 移至下窗
+keymap.set("n", "<leader>n", ":<C-u>TmuxNavigateLeft<CR>") -- 移至左窗
+keymap.set("n", "<leader>i", ":<C-u>TmuxNavigateRight<CR>") -- 移至右窗
+keymap.set("n", "<leader>o", ":<C-u>TmuxNavigatePrevious<CR>") -- 移至之前窗口
