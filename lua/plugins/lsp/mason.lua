@@ -1,7 +1,6 @@
 return {
 	"mason-org/mason-lspconfig.nvim",
 	opts = {
-		-- LSP
 		ensure_installed = {
 			"lua_ls",         -- Lua
 			"pyright",        -- Python

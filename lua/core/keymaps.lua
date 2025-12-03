@@ -67,4 +67,4 @@ keymap.set("n", "<C-n>", ":bprevious<CR>") -- 上一个缓冲区
 keymap.set("n", "<C-e>", ":bdelete<CR>") -- 删除一个缓冲区
 
 -- NvimTree 按键设置
-vim.keymap.set("n", "<leader>tt", ":NvimTreeToggle<CR>") -- 开启/关闭文档树
+keymap.set("n", "<leader>tt", ":NvimTreeToggle<CR>") -- 开启/关闭文档树
