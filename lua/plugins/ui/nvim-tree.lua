@@ -35,7 +35,7 @@ local function keymaps(bufnr)
 	vim.keymap.set("n", "p", api.fs.paste, opts("粘贴"))
 	vim.keymap.set("n", "x", api.fs.cut, opts("剪切"))
 
-	--- 路径操作
+	-- 路径操作
 	vim.keymap.set("n", "y", api.fs.copy.filename, opts("复制文件名"))
 	vim.keymap.set("n", "Y", api.fs.copy.relative_path, opts("复制相对路径"))
 	vim.keymap.set("n", "gy", api.fs.copy.absolute_path, opts("复制绝对路径"))
