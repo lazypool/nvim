@@ -47,6 +47,7 @@ keymap.set("n", "S", ":w<CR>") -- 保存
 keymap.set("n", "Q", ":q<CR>") -- 退出
 keymap.set("n", "<leader><CR>", ":nohl<CR>") -- 取消高亮
 
+-- ---------- 插件 ---------- --
 -- Navigator 按键设置
 keymap.set("n", "<leader>u", ":<C-u>TmuxNavigateUp<CR>") -- 移至上窗
 keymap.set("n", "<leader>e", ":<C-u>TmuxNavigateDown<CR>") -- 移至下窗
@@ -64,3 +65,6 @@ keymap.set("n", "<leader>fh", ":<C-u>Telescope help_tags<CR>") -- 查找帮助
 keymap.set("n", "<C-i>", ":bnext<CR>") -- 下一个缓冲区
 keymap.set("n", "<C-n>", ":bprevious<CR>") -- 上一个缓冲区
 keymap.set("n", "<C-e>", ":bdelete<CR>") -- 删除一个缓冲区
+
+-- NvimTree 按键设置
+vim.keymap.set("n", "<leader>tt", ":NvimTreeToggle<CR>") -- 开启/关闭文档树
