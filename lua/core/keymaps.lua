@@ -53,3 +53,9 @@ keymap.set("n", "<leader>e", ":<C-u>TmuxNavigateDown<CR>") -- 移至下窗
 keymap.set("n", "<leader>n", ":<C-u>TmuxNavigateLeft<CR>") -- 移至左窗
 keymap.set("n", "<leader>i", ":<C-u>TmuxNavigateRight<CR>") -- 移至右窗
 keymap.set("n", "<leader>o", ":<C-u>TmuxNavigatePrevious<CR>") -- 移至之前窗口
+
+-- Telescope 按键设置
+keymap.set("n", "<leader>ff", ":<C-u>Telescope find_files<CR>") -- 查找文件
+keymap.set("n", "<leader>fg", ":<C-u>Telescope live_grep<CR>") -- 查找关键词
+keymap.set("n", "<leader>fb", ":<C-u>Telescope buffers<CR>") -- 查找缓冲区
+keymap.set("n", "<leader>fh", ":<C-u>Telescope help_tags<CR>") -- 查找帮助
