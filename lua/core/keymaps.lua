@@ -59,3 +59,8 @@ keymap.set("n", "<leader>ff", ":<C-u>Telescope find_files<CR>") -- 查找文件
 keymap.set("n", "<leader>fg", ":<C-u>Telescope live_grep<CR>") -- 查找关键词
 keymap.set("n", "<leader>fb", ":<C-u>Telescope buffers<CR>") -- 查找缓冲区
 keymap.set("n", "<leader>fh", ":<C-u>Telescope help_tags<CR>") -- 查找帮助
+
+-- Buffers 按键设置
+keymap.set("n", "<C-i>", ":bnext<CR>") -- 下一个缓冲区
+keymap.set("n", "<C-n>", ":bprevious<CR>") -- 上一个缓冲区
+keymap.set("n", "<C-e>", ":bdelete<CR>") -- 删除一个缓冲区
