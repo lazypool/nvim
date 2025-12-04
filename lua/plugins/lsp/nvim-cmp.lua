@@ -1,7 +1,7 @@
 return {
 	"hrsh7th/nvim-cmp",
-	event="InsertEnter",
-	dependencies={
+	event = "InsertEnter",
+	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-buffer",
@@ -9,7 +9,7 @@ return {
 		"L3MON4D3/LuaSnip",
 		"saadparwaiz1/cmp_luasnip",
 		"rafamadriz/friendly-snippets",
-		"windwp/nvim-autopairs"
+		"windwp/nvim-autopairs",
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -27,7 +27,7 @@ return {
 			snippet = {
 				expand = function(args)
 					luasnip.lsp_expand(args.body)
-				end
+				end,
 			},
 
 			mapping = cmp.mapping.preset.insert({
@@ -59,15 +59,15 @@ return {
 					else
 						fallback()
 					end
-				end)
+				end),
 			}),
 
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp", priority = 1000 },
 				{ name = "luasnip", priority = 750 },
-				{ name = "path", priority = 500 }
+				{ name = "path", priority = 500 },
 			}, {
-				{ name = "buffer", priority = 250 }
+				{ name = "buffer", priority = 250 },
 			}),
 
 			formatting = {
@@ -77,24 +77,24 @@ return {
 						luasnip = "[Snip]",
 						path = "[Path]",
 						buffer = "[Buffer]",
-						cmdline = "[Cmd]"
+						cmdline = "[Cmd]",
 					})[entry.source.name]
 					return vimitem
-				end
+				end,
 			},
 
 			window = {
-        completion = cmp.config.window.bordered({
-					border = "single"
+				completion = cmp.config.window.bordered({
+					border = "single",
 				}),
-        documentation = cmp.config.window.bordered({
-					border = "single"
+				documentation = cmp.config.window.bordered({
+					border = "single",
 				}),
 				experimental = {
-					ghost_text = true
+					ghost_text = true,
 				},
-				capabilities = capabilities
-			}
+				capabilities = capabilities,
+			},
 		})
 
 		cmp.setup.cmdline(":", {
@@ -102,20 +102,17 @@ return {
 			sources = cmp.config.sources({
 				{ name = "path" },
 			}, {
-				{ name = "cmdline"},
-			})
+				{ name = "cmdline" },
+			}),
 		})
 
 		cmp.setup.cmdline("/", {
 			mapping = cmp.mapping.preset.cmdline(),
 			sources = {
 				{ name = "buffer" },
-			}
+			},
 		})
 
-		cmp.event:on(
-			'confirm_done',
-			cmpautopairs.on_confirm_done()
-		)
-	end
+		cmp.event:on("confirm_done", cmpautopairs.on_confirm_done())
+	end,
 }

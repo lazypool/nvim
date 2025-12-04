@@ -1,10 +1,37 @@
 return {
 	"jay-babu/mason-null-ls.nvim",
 	opts = {
-		ensure_installed = {},
-		methods = {},
+		ensure_installed = {
+			"stylua", -- Lua
+			"prettier",
+			"black", -- Python
+			"isort",
+			"shfmt",
+			"clang-format", -- C/C++
+			"gofmt", -- Go
+			"sql_formatter", -- SQL
+			"eslint_d",
+			"luacheck",
+			"flake8",
+			"shellcheck", -- Shell
+			"hadolint", -- Dockerfile
+			"markdownlint", -- Markdown
+			"yamllint",
+			"jsonlint",
+			"vint",
+			"codespell",
+			"jq", -- JSON
+			"yq", -- YAML
+		},
+		methods = {
+			diagnostics = true,
+			formatting = true,
+			code_actions = true,
+			completion = true,
+			hover = true,
+		},
 		automatic_installation = false,
-		handlers = nil,
+		handlers = {},
 	},
 	dependencies = {
 		"mason-org/mason.nvim",
@@ -12,6 +39,6 @@ return {
 	},
 	event = {
 		"BufReadPre",
-		"BufNewFile"
-	}
+		"BufNewFile",
+	},
 }

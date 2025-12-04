@@ -2,19 +2,21 @@
 	"runtime": {
 		"version": "LuaJIT"
 	},
-  "diagnostics": {
-    "globals": ["vim"]
-  },
-  "workspace": {
-    "checkThirdParty": false,
-    "library": [
-      "/usr/share/nvim/runtime/lua",
-      "/usr/share/nvim/runtime/lua/vim",
-      "/usr/share/nvim/runtime/lua/vim/lsp",
+	"diagnostics": {
+		"globals": [
+			"vim"
+		]
+	},
+	"workspace": {
+		"checkThirdParty": false,
+		"library": [
+			"/usr/share/nvim/runtime/lua",
+			"/usr/share/nvim/runtime/lua/vim",
+			"/usr/share/nvim/runtime/lua/vim/lsp",
 			"${3rd}/luv/library"
-    ]
-  },
-  "telemetry": {
-    "enable": false
-  }
+		]
+	},
+	"telemetry": {
+		"enable": false
+	}
 }

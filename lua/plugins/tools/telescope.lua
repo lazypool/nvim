@@ -3,6 +3,6 @@ return {
 	opts = {},
 	tag = "0.2.0",
 	dependencies = {
-		"nvim-lua/plenary.nvim"
-	}
+		"nvim-lua/plenary.nvim",
+	},
 }

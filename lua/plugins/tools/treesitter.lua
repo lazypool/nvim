@@ -24,8 +24,8 @@ return {
 		highlight = {
 			enable = true,
 			disable = {
-				"latex"
-			}
+				"latex",
+			},
 		},
 		incremental_selection = {
 			enable = true,
@@ -33,10 +33,10 @@ return {
 				init_selection = "gnn",
 				node_incremental = "grn",
 				scope_incremental = "grc",
-				node_decremental = "grm"
-			}
-		}
+				node_decremental = "grm",
+			},
+		},
 	},
 	build = ":TSUpdate",
-	lazy = true
- }
+	lazy = true,
+}

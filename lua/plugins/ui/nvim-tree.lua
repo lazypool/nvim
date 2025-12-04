@@ -2,17 +2,17 @@ return {
 	"nvim-tree/nvim-tree.lua",
 	opts = {
 		filters = {
-			custom ={
+			custom = {
 				"^\\.git$",
 				"^\\.cache$",
 				"node_modules",
 				"__pycache__",
-			}
+			},
 		},
 		renderer = {
 			icons = {
-				padding = " "
-			}
+				padding = " ",
+			},
 		},
 		on_attach = function(bufnr)
 			-- 按键映射提示文字
@@ -79,9 +79,9 @@ return {
 			vim.keymap.set("n", "bd", api.marks.bulk.delete, opts("批量删除标记文件"))
 			vim.keymap.set("n", "bt", api.marks.bulk.trash, opts("批量移动到回收站"))
 			vim.keymap.set("n", "bmv", api.marks.bulk.move, opts("批量移动标记文件"))
-		end
+		end,
 	},
 	dependencies = {
-		"nvim-tree/nvim-web-devicons"
-	}
+		"nvim-tree/nvim-web-devicons",
+	},
 }
