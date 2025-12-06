@@ -19,7 +19,6 @@ return {
 			"yamllint",
 			"jsonlint",
 			"vint",
-			"codespell",
 			"jq", -- JSON
 			"yq", -- YAML
 		},
