@@ -47,6 +47,21 @@ keymap.set("n", "S", ":w<CR>") -- 保存
 keymap.set("n", "Q", ":q<CR>") -- 退出
 keymap.set("n", "<leader><CR>", ":nohl<CR>") -- 取消高亮
 
+-- ---------- 选择模式 ---------- --
+-- 覆写通用模式的部分按键
+keymap.set("s", "u", "u") -- 按 u 输入 u
+keymap.set("s", "e", "e") -- 按 e 输入 e
+keymap.set("s", "n", "n") -- 按 n 输入 n
+keymap.set("s", "i", "i") -- 按 i 输入 i
+keymap.set("s", "U", "U") -- 按 U 输入 U
+keymap.set("s", "E", "E") -- 按 E 输入 E
+keymap.set("s", "N", "N") -- 按 N 输入 N
+keymap.set("s", "I", "I") -- 按 I 输入 I
+keymap.set("s", "k", "k") -- 按 k 输入 s
+keymap.set("s", "K", "K") -- 按 K 输入 r
+keymap.set("s", "s", "s") -- 按 s 输入 s
+keymap.set("s", "r", "r") -- 按 r 输入 r
+
 -- ---------- 插件 ---------- --
 -- Navigator 按键设置
 keymap.set("n", "<leader>u", ":<C-u>TmuxNavigateUp<CR>") -- 移至上窗
