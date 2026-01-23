@@ -10,12 +10,14 @@ return {
 		"saadparwaiz1/cmp_luasnip",
 		"rafamadriz/friendly-snippets",
 		"windwp/nvim-autopairs",
+		"brenoprata10/nvim-highlight-colors",
 	},
 	config = function()
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 		local cmpautopairs = require("nvim-autopairs.completion.cmp")
+		local highlightcolors = require("nvim-highlight-colors")
 		require("luasnip.loaders.from_vscode").lazy_load()
 
 		local check_backspace = function()
@@ -79,7 +81,7 @@ return {
 						buffer = "[Buffer]",
 						cmdline = "[Cmd]",
 					})[entry.source.name]
-					return vimitem
+					return highlightcolors.format(entry, vimitem)
 				end,
 			},
 

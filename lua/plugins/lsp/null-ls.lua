@@ -15,7 +15,6 @@ return {
 			"flake8",
 			"shellcheck", -- Shell
 			"hadolint", -- Dockerfile
-			"markdownlint", -- Markdown
 			"yamllint",
 			"jsonlint",
 			"vint",
