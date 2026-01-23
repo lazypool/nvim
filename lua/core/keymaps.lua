@@ -57,8 +57,8 @@ keymap.set("s", "U", "U") -- 按 U 输入 U
 keymap.set("s", "E", "E") -- 按 E 输入 E
 keymap.set("s", "N", "N") -- 按 N 输入 N
 keymap.set("s", "I", "I") -- 按 I 输入 I
-keymap.set("s", "k", "k") -- 按 k 输入 s
-keymap.set("s", "K", "K") -- 按 K 输入 r
+keymap.set("s", "k", "k") -- 按 k 输入 k
+keymap.set("s", "K", "K") -- 按 K 输入 K
 keymap.set("s", "s", "s") -- 按 s 输入 s
 keymap.set("s", "r", "r") -- 按 r 输入 r
 
