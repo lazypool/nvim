@@ -4,6 +4,7 @@ return {
 		ensure_installed = {
 			"bash",
 			"c",
+			"diff",
 			"lua",
 			"vim",
 			"vimdoc",
@@ -27,16 +28,7 @@ return {
 				"latex",
 			},
 		},
-		incremental_selection = {
-			enable = true,
-			keymaps = {
-				init_selection = "gnn",
-				node_incremental = "grn",
-				scope_incremental = "grc",
-				node_decremental = "grm",
-			},
-		},
 	},
 	build = ":TSUpdate",
-	lazy = true,
+	lazy = false,
 }

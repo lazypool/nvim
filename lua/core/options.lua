@@ -12,6 +12,7 @@ opt.number = true
 -- 缩进
 opt.tabstop = 2
 opt.shiftwidth = 2
+opt.smartindent = false
 
 -- 防止包裹
 opt.wrap = false
