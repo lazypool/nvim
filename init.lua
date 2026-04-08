@@ -17,6 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 -- 配置
 require("core.options")
 require("core.keymaps")
+require("core.indent")
 
 -- 插件
 require("lazy").setup({
@@ -44,13 +45,3 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.treesitter.start()
 	end,
 })
-
--- Python indent
-vim.g.python_indent = {
-    disable_parentheses_indenting = false,
-    closed_paren_align_last_line = false,
-    searchpair_timeout = 150,
-    continue = 'shiftwidth()',
-    open_paren = 'shiftwidth()',
-    nested_paren = 'shiftwidth()',
-}
