@@ -4,7 +4,6 @@ return {
 		ensure_installed = {
 			"lua_ls", -- Lua
 			"pyright", -- Python
-			"gopls", -- Go
 			"rust_analyzer", -- Rust
 			"ts_ls", -- Typescript/Javascript
 			"html",
