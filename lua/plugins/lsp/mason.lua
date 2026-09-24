@@ -13,6 +13,7 @@ return {
 			"clangd", -- C/C++
 			"vimls",
 			"eslint",
+			"texlab", -- LaTeX
 		},
 	},
 	dependencies = {

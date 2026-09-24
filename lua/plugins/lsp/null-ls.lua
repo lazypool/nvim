@@ -20,6 +20,7 @@ return {
 				"hadolint", -- Dockerfile
 				"yamllint",
 				"jsonlint",
+				"markdownlint", -- Markdown
 				"vint",
 				"jq", -- JSON
 				"yq", -- YAML
