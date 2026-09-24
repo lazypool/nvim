@@ -26,22 +26,3 @@ require("lazy").setup({
 	{ import = "plugins.tools" },
 	{ import = "plugins.lsp" },
 })
-
--- treesitter
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = {
-		"python",
-		"c",
-		"cpp",
-		"cu",
-		"html",
-		"javascript",
-		"typescript",
-		"css",
-		"lua",
-		"go",
-	},
-	callback = function()
-		vim.treesitter.start()
-	end,
-})
