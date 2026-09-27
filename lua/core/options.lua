@@ -5,9 +5,10 @@ opt.title = true
 opt.titlelen = 0
 opt.titlestring = 'nvim %{expand("%:p")}'
 
--- 行号
+-- 行号和移动
 opt.relativenumber = true
 opt.number = true
+opt.scrolloff = 5
 
 -- 缩进
 opt.tabstop = 2
@@ -19,6 +20,7 @@ opt.wrap = false
 
 -- 光标行
 opt.cursorline = true
+opt.cursorlineopt = "number"
 
 -- 禁用鼠标
 opt.mouse = ""
