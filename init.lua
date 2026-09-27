@@ -18,6 +18,7 @@ vim.opt.rtp:prepend(lazypath)
 require("core.options")
 require("core.keymaps")
 require("core.indent")
+require("core.autocmds")
 
 -- 插件
 require("lazy").setup({
